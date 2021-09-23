@@ -1,6 +1,6 @@
 uris:
   rest:
-    patternString: /.rest/*
+    patternString: '*'
 allowedOrigins:
   - '*'
 allowedMethods:
