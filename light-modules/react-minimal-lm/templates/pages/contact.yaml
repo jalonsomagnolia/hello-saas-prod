@@ -1,5 +1,5 @@
 title: 'React: Contact'
-url: http://localhost:3000
+url: https://kind-keller-e3cebc.netlify.app
 dialog: spa-lm:pages/basic
 
 renderType: spa
