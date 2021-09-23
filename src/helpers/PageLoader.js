@@ -32,9 +32,9 @@ class PageLoader extends React.Component {
     console.log('pagePath:' + pagePath);
 
     const version = getVersion(window.location.href);
-    let fullContentPath = `${apiBase}${version ? process.env.REACT_APP_MGNL_API_PAGES_PREVIEW : process.env.REACT_APP_MGNL_API_PAGES}${pagePath}${version ? `?version=${version}` : ''}`;
+    let fullContentPath = `${apiBase}`;
 
-    const pageResponse = await fetch(fullContentPath);
+    const pageResponse = await fetch(fullContentPath  + "?access_token=bsw2f994ini1rw5u");
 
     const pageJson = await pageResponse.json();
     console.log('page content: ', pageJson);
@@ -44,7 +44,7 @@ class PageLoader extends React.Component {
 
     let templateJson = null;
     if (EditorContextHelper.inEditor()) {
-      const templateResponse = await fetch(apiBase + process.env.REACT_APP_MGNL_API_TEMPLATES + '/' + templateId);
+      const templateResponse = await fetch(apiBase + process.env.REACT_APP_MGNL_API_TEMPLATES + '/' + templateId + "?access_token=bsw2f994ini1rw5u");
       templateJson = await templateResponse.json();
       console.log('definition:', templateJson);
     }
