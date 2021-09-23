@@ -32,7 +32,7 @@ class PageLoader extends React.Component {
     console.log('pagePath:' + pagePath);
 
     const version = getVersion(window.location.href);
-    let fullContentPath = `${apiBase}`;
+    let fullContentPath = `${apiBase}${pagePath}`;
 
     const pageResponse = await fetch(fullContentPath  + "?access_token=bsw2f994ini1rw5u&12");
 
